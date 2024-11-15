@@ -6,7 +6,6 @@
     <title>Inventory Management</title>
     <link rel="stylesheet" href="/static/style.css">
 
-    <!-- Include QuaggaJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 </head>
 <body>
@@ -14,7 +13,6 @@
         <h1 class="title">Inventory Management System</h1>
         <p>Welcome, {{ current_user.id }}! <a class="logout-btn" href="/logout">Logout</a></p>
         
-        <!-- Form to manually add items -->
         <form action="/add" method="post">
             <input class="input-data" type="text" name="name" placeholder="Item Name" required>
             <input class="input-data" type="number" name="quantity" placeholder="Quantity" required>
@@ -22,13 +20,11 @@
             <button class="input-btn" type="submit">Add Item</button>
         </form>
 
-        <!-- Webcam-based item import section -->
         <div class="webcam-section">
             <h2 class="webcam-title">Scan Item with Webcam</h2>
             <video id="video" width="400" height="300" autoplay></video>
             <button id="start-scan" class="input-btn">Start Scanning</button>
 
-            <!-- Form to confirm item details from barcode scan -->
             <form id="barcode-form" action="/add" method="post" style="display:none;">
                 <input class="input-data" type="text" id="barcode-name" name="name" placeholder="Item Name" required>
                 <input class="input-data" type="number" id="barcode-quantity" name="quantity" placeholder="Quantity" required>
@@ -37,7 +33,6 @@
             </form>
         </div>
         
-        <!-- Inventory Table -->
         <table>
             <thead>
                 <tr class="column-top">
@@ -68,7 +63,6 @@
         </table>
     </div>
 
-    <!-- Scripts for general and webcam functionality -->
     <script src="/static/script.js"></script>
     <script src="/static/webcam.js"></script>
 </body>
